@@ -15,9 +15,11 @@ countries_list = []
 for row in rows:
     dic = {}
     dic['Country']=row.find_all('td')[1].text
-    dic['Population']=row.find_all('td')[2].text
-
-
+    dic['Population']=row.find_all('td')[2].text.replace(',','')
+    dic['Yearly Change']=row.find_all('td')[3].text
+    dic['Net Change']=row.find_all('td')[4].text.replace(',','')
+    dic['Density (P/SquareKm) ']=row.find_all('td')[5].text
+    dic['Land Area (SquareKm) ']=row.find_all('td')[6].text.replace(',','')
 
     countries_list.append(dic)
 
